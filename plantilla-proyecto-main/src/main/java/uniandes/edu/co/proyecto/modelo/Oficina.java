@@ -1,5 +1,7 @@
 package uniandes.edu.co.proyecto.modelo;
 
+import java.util.List;
+
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
@@ -11,12 +13,12 @@ public class Oficina {
 
     @Field("_id")
     @Id
-    private ObjectId _id; 
+    private String _id; 
 
     @Field("direccion")
     private String direccion; 
 
-    @Field("num_puntos_atecion_posibles")
+    @Field("num_puntos_atencion_posibles")
     private int num_puntos_atecion_posibles; 
 
     @Field("gerente")
@@ -27,18 +29,13 @@ public class Oficina {
     @DBRef
     private PuntoAtencion puntoAtencion;
 
-    public Oficina(ObjectId _id, String direccion, int num_puntos_atecion_posibles) {
-        super();
-        this._id = _id;
-        this.direccion = direccion;
-        this.num_puntos_atecion_posibles = num_puntos_atecion_posibles;
-    }
+   
 
-    public ObjectId get_id() {
+    public String get_id() {
         return _id;
     }
 
-    public void set_id(ObjectId _id) {
+    public void set_id(String _id) {
         this._id = _id;
     }
 
@@ -50,11 +47,11 @@ public class Oficina {
         this.direccion = direccion;
     }
 
-    public int getNum_puntos_atecion_posibles() {
+    public int getNum_puntos_atencion_posibles() {
         return num_puntos_atecion_posibles;
     }
 
-    public void setNum_puntos_atecion_posibles(int num_puntos_atecion_posibles) {
+    public void setNum_puntos_atencion_posibles(int num_puntos_atecion_posibles) {
         this.num_puntos_atecion_posibles = num_puntos_atecion_posibles;
     }
 

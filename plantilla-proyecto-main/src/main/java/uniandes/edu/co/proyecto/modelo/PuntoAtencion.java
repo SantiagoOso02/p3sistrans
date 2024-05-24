@@ -1,59 +1,50 @@
 package uniandes.edu.co.proyecto.modelo;
 
-import java.util.List;
-
-import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
-@Document(collection = "puntos_atencion")
+import java.util.List;
+
+@Document(collection = "puntosAtencion")
 public class PuntoAtencion {
-    
-    @Field("_id")
+
     @Id
-    private ObjectId _id;
+    private String id;
 
     @Field("tipo")
-    private TipoPunto tipo_punto;
-
+    private TipoPunto tipo;
+    
     @Field("localizacion")
-    private List<Integer> localización;
+    private List<Double> localizacion; // [latitud, longitud]
 
     @Field("empleados")
     private List<Empleado> empleados;
 
+    // Constructores, getters y setters
 
-    public PuntoAtencion(ObjectId _id, TipoPunto tipo_punto, List<Integer> localización) {
-        super();
-        this._id = _id;
-        this.tipo_punto = tipo_punto;
-        this.localización = localización;
-        
+    public String getId() {
+        return id;
     }
 
-    public ObjectId get_id() {
-        return _id;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public void set_id(ObjectId _id) {
-        this._id = _id;
+    public TipoPunto getTipo() {
+        return tipo;
     }
 
-    public TipoPunto getTipo_punto() {
-        return tipo_punto;
+    public void setTipo(TipoPunto tipo) {
+        this.tipo = tipo;
     }
 
-    public void setTipo_punto(TipoPunto tipo_punto) {
-        this.tipo_punto = tipo_punto;
+    public List<Double> getLocalizacion() {
+        return localizacion;
     }
 
-    public List<Integer> getLocalización() {
-        return localización;
-    }
-
-    public void setLocalización(List<Integer> localización) {
-        this.localización = localización;
+    public void setLocalizacion(List<Double> localizacion) {
+        this.localizacion = localizacion;
     }
 
     public List<Empleado> getEmpleados() {
@@ -63,8 +54,4 @@ public class PuntoAtencion {
     public void setEmpleados(List<Empleado> empleados) {
         this.empleados = empleados;
     }
-
-
-
-    
 }

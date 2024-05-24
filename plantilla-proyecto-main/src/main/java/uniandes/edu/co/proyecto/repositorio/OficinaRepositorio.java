@@ -5,7 +5,7 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 
 import uniandes.edu.co.proyecto.modelo.Oficina;
 
-public interface OficinaRepositorio extends MongoRepository<Oficina, ObjectId>{
+public interface OficinaRepositorio extends MongoRepository<Oficina, String>{
 
     
 

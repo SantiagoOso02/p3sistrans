@@ -5,6 +5,7 @@ import java.sql.Date;
 import java.time.LocalDate;
 import java.util.List;
 
+import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -13,8 +14,9 @@ import org.springframework.data.mongodb.core.mapping.Field;
 @Document(collection = "cuentas")
 public class Cuentas {
 
+    @Field("_id")
     @Id
-    private String numero_cuenta;
+    private String _id;
     
     @Field("tipo_cuenta")
     private TipoCuenta tipo_cuenta;
@@ -23,36 +25,27 @@ public class Cuentas {
     private Estado estado; 
 
     @Field("saldo")
-    private float saldo; 
+    private int saldo; 
 
     @Field("fecha_ultima_transaccion")
     private LocalDate fecha_ultima_transaccion; 
 
 
     @Field("cliente")
-    private List<Cliente> cliente;
+    private Cliente cliente;
 
     @Field("operaciones_bancarias")
     @DBRef
     private OperacionBancaria operacionBancaria;
 
-    public Cuentas(String numero_cuenta, TipoCuenta tipo_cuenta, Estado estado, float saldo, LocalDate fecha_ultima_transaccion) {
-        super();
-        this.numero_cuenta = numero_cuenta;
-        this.tipo_cuenta = tipo_cuenta;
-        this.estado = estado;
-        this.saldo = saldo;
-        this.fecha_ultima_transaccion= fecha_ultima_transaccion;
-      
+   
 
+    public String get_id() {
+        return _id;
     }
 
-    public String getNumero_cuenta() {
-        return numero_cuenta;
-    }
-
-    public void setNumero_cuenta(String numero_cuenta) {
-        this.numero_cuenta = numero_cuenta;
+    public void set_id(String _id) {
+        this._id = _id;
     }
 
     public TipoCuenta getTipo_cuenta() {
@@ -71,11 +64,11 @@ public class Cuentas {
         this.estado = estado;
     }
 
-    public float getSaldo(float saldo) {
+    public int getSaldo(int saldo) {
         return saldo;
     }   
 
-    public void setSaldo(float saldo) {
+    public void setSaldo(int saldo) {
         this.saldo = saldo;
     }
 
@@ -88,11 +81,11 @@ public class Cuentas {
     }
 
 
-    public List<Cliente> getCliente() {
+    public Cliente getCliente() {
         return cliente;
     }
 
-    public void setCliente(List<Cliente> cliente) {
+    public void setCliente(Cliente cliente) {
         this.cliente = cliente;
     }
 
@@ -103,7 +96,7 @@ public class Cuentas {
     public void setOperacionBancaria(OperacionBancaria operacionBancaria) {
         this.operacionBancaria = operacionBancaria;
     }
-    
+
 
    
    

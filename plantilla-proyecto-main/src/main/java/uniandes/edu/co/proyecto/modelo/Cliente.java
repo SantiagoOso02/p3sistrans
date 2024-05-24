@@ -12,7 +12,7 @@ import lombok.ToString;
 public class Cliente {
 
    
-    private ObjectId _id;
+  
 
     private String nombre;
     
@@ -21,21 +21,9 @@ public class Cliente {
     
     private TipoCliente tipo_cliente;
 
-    public Cliente(ObjectId _id, String nombre, String num_documento, TipoCliente tipo_cliente) {
-        super();
-        this._id = _id;
-        this.nombre = nombre;
-        this.num_documento = num_documento;
-        this.tipo_cliente = tipo_cliente;
-    }
+   
 
-    public ObjectId get_id() {
-        return _id;
-    }
 
-    public void set_id(ObjectId _id) {
-        this._id = _id;
-    }
 
     public String getNombre() {
         return nombre;
@@ -62,7 +50,7 @@ public class Cliente {
         this.tipo_cliente = tipo_cliente;
     }
 
-    
+
 
 
 
