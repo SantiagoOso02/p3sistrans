@@ -36,7 +36,7 @@ public class Cuentas {
 
     @Field("operaciones_bancarias")
     @DBRef
-    private OperacionBancaria operacionBancaria;
+    private List<OperacionBancaria> operacionBancaria;
 
    
 
@@ -64,11 +64,11 @@ public class Cuentas {
         this.estado = estado;
     }
 
-    public int getSaldo(int saldo) {
+    public int getSaldo() {
         return saldo;
     }   
 
-    public void setSaldo(double saldo2) {
+    public void setSaldo(int saldo) {
         this.saldo = saldo;
     }
 
@@ -89,11 +89,11 @@ public class Cuentas {
         this.cliente = cliente;
     }
 
-    public OperacionBancaria getOperacionBancaria() {
+    public List<OperacionBancaria> getOperacionBancaria() {
         return operacionBancaria;
     }
 
-    public void setOperacionBancaria(OperacionBancaria operacionBancaria) {
+    public void setOperacionBancaria(List<OperacionBancaria> operacionBancaria) {
         this.operacionBancaria = operacionBancaria;
     }
 

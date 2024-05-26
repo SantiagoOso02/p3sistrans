@@ -27,7 +27,7 @@ public class Oficina {
 
     @Field("punto_atencion")
     @DBRef
-    private PuntoAtencion puntoAtencion;
+    private List<PuntoAtencion> puntoAtencion;
 
    
 
@@ -63,11 +63,11 @@ public class Oficina {
         this.gerente = gerente;
     }
 
-    public PuntoAtencion getPuntoAtencion() {
+    public List<PuntoAtencion> getPuntoAtencion() {
         return puntoAtencion;
     }
 
-    public void setPuntoAtencion(PuntoAtencion puntoAtencion) {
+    public void setPuntoAtencion(List<PuntoAtencion> puntoAtencion) {
         this.puntoAtencion = puntoAtencion;
     }
 

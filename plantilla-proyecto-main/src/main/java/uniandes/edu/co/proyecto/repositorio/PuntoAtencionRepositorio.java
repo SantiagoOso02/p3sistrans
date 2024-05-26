@@ -14,7 +14,7 @@ public interface PuntoAtencionRepositorio extends MongoRepository<PuntoAtencion,
 
     @Query("{_id:?0}")
     @Update("{$push:{empleados:{num_documento:?0, tipo_empleado: ?1}}}")
-    void añadirEmpleado(ObjectId id_oficina, String num_documento, TipoEmpleado tipoEmpleado);
+    void añadirEmpleado(String puntoAtencion, String num_documento, TipoEmpleado tipoEmpleado);
 
     @Query("{}")
     Collection<PuntoAtencion> darPuntos();

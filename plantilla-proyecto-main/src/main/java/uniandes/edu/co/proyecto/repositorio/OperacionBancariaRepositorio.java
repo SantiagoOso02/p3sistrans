@@ -1,16 +1,15 @@
 package uniandes.edu.co.proyecto.repositorio;
 
-import org.bson.types.ObjectId;
+import java.util.Date;
+
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
-import org.springframework.data.mongodb.repository.Update;
 
 import uniandes.edu.co.proyecto.modelo.OperacionBancaria;
 
-public interface OperacionBancariaRepositorio extends MongoRepository<OperacionBancaria, ObjectId>{
+public interface OperacionBancariaRepositorio extends MongoRepository<OperacionBancaria, String>{
 
-    @Query("{_id: ?0}")
-        @Update("{$set:{estado: ?1}")
-        void cambiarEstadoCuenta(String id_cuenta, String estado_nuevo);
+    @Query("{fecha:{$gte:?0, $lte:?1}}")
+    void darOperacionesEntreFechas(Date fechaInicio, Date fechaFinal);
 
 }

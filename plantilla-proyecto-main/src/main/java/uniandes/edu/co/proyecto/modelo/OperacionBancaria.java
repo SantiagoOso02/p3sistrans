@@ -14,8 +14,7 @@ import lombok.ToString;
 public class OperacionBancaria {
     
     @Field("_id")
-    @Id
-    private ObjectId id;
+    private String id;
 
     @Field("tipo")
     private TipoOperacion tipo;
@@ -26,27 +25,20 @@ public class OperacionBancaria {
     @Field("monto")
     private float monto;
 
+    @Field("cuenta_origen")
+    private String cuenta_origen;
+
     @Field("cuenta_destino")
     private String cuenta_destino;
 
     @Field("punto_atencion")
     private String punto_atencion;
 
-    public OperacionBancaria(ObjectId id, TipoOperacion tipo, LocalDate fecha, float monto, String cuenta_destino, String punto_atencion) {
-        super();
-        this.id = id;
-        this.tipo = tipo;
-        this.fecha = fecha;
-        this.monto = monto;
-        this.cuenta_destino = cuenta_destino;
-        this.punto_atencion = punto_atencion;
-    }
-
-    public ObjectId getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(ObjectId id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -72,6 +64,14 @@ public class OperacionBancaria {
 
     public void setMonto(float monto){
         this.monto = monto;
+    }
+
+    public String getCuenta_origen() {
+        return cuenta_origen;
+    }
+
+    public void setCuenta_origen(String cuenta_origen) {
+        this.cuenta_origen = cuenta_origen;
     }
 
     public String getCuenta_destino() {
