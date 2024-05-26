@@ -11,19 +11,11 @@ import lombok.ToString;
 
 public class Cliente {
 
-   
-  
-
     private String nombre;
     
     private String num_documento;
-
     
     private TipoCliente tipo_cliente;
-
-   
-
-
 
     public String getNombre() {
         return nombre;
@@ -41,7 +33,6 @@ public class Cliente {
         this.num_documento = num_documento;
     }
 
-
     public TipoCliente getTipo_cliente() {
         return tipo_cliente;
     }
@@ -50,14 +41,4 @@ public class Cliente {
         this.tipo_cliente = tipo_cliente;
     }
 
-
-
-
-
-   
-
-    
-
-   
-    
 }

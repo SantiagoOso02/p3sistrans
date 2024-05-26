@@ -38,7 +38,6 @@ public class ProyectoApplication implements CommandLineRunner{
 	@Autowired
 	private CuentasRepositorio cuentasRepositorio;
 
-
 	public static void main(String[] args) {
 		SpringApplication.run(ProyectoApplication.class, args);
 	}
@@ -114,8 +113,10 @@ public class ProyectoApplication implements CommandLineRunner{
 
 		System.out.println("Cuenta guardada");
 
-		
+		//RF5: Cambiar el estado de una cuenta
+		cuentasRepositorio.cambiarEstadoCuenta("1234567890", "DESACTIVADA");
 
+		//RF6: Registrar una operación sobre cuenta
 
 		
 	}
