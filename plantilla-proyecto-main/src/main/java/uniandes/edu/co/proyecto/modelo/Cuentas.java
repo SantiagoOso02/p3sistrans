@@ -68,7 +68,7 @@ public class Cuentas {
         return saldo;
     }   
 
-    public void setSaldo(int saldo) {
+    public void setSaldo(double saldo2) {
         this.saldo = saldo;
     }
 
