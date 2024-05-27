@@ -1,7 +1,6 @@
 package uniandes.edu.co.proyecto.repositorio;
 
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 
 import org.springframework.data.mongodb.repository.Aggregation;

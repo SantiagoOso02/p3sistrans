@@ -1,7 +1,5 @@
 package uniandes.edu.co.proyecto.modelo;
 
-import org.bson.types.ObjectId;
-
 // import org.springframework.data.mongodb.core.mapping.Document;
 // import org.springframework.data.mongodb.core.mapping.Field;
 
